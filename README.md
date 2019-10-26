@@ -1,5 +1,5 @@
 # nixos-dvc
-shell script to start DVC (data version control) under nixos
+nix-shell script to start DVC (data version control) under nixos
 
 for NixOS 19.03
 

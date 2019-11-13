@@ -1,16 +1,16 @@
 { pkgs ? import <nixpkgs> {} }:
 let
-    promise = pkgs.callPackage ./promise.nix {
+    promise = pkgs.callPackage ./tf-datasets/promise.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           six = pkgs.python37Packages.six;
      };
-     tensorflow-metadata = pkgs.callPackage ./tensorflow-metadata.nix {
+     tensorflow-metadata = pkgs.callPackage ./tf-datasets/tensorflow-metadata.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           googleapis-common-protos = pkgs.python37Packages.googleapis_common_protos;
      };
-     tensorflow-datasets = pkgs.callPackage ./tensorflow-datasets.nix {
+     tensorflow-datasets = pkgs.callPackage ./tf-datasets/tensorflow-datasets.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           protobuf = pkgs.python37Packages.protobuf;

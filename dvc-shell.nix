@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {} }:
 let
-     gitdb2 = pkgs.callPackage ./gitdb2.nix {
+     gitdb2 = pkgs.callPackage ./dvc/gitdb2.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           smmap2 = pkgs.python37Packages.smmap2;
      };
-     tqdm = pkgs.callPackage ./tqdm.nix {
+     tqdm = pkgs.callPackage ./dvc/tqdm.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           nose = pkgs.python37Packages.nose;
@@ -13,14 +13,14 @@ let
           glibcLocales = pkgs.glibcLocales;
           flake8  = pkgs.python37Packages.flake8;
      };
-     ruamel_yaml_clib = pkgs.callPackage ./ruamel_yaml_clib.nix {
+     ruamel_yaml_clib = pkgs.callPackage ./dvc/ruamel_yaml_clib.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           ruamel_base = pkgs.python37Packages.ruamel_base;
           ruamel_ordereddict = pkgs.python37Packages.ruamel_ordereddict;
           isPy3k = true;
      };
-     ruamel_yaml = pkgs.callPackage ./ruamel_yaml.nix {
+     ruamel_yaml = pkgs.callPackage ./dvc/ruamel_yaml.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           ruamel_base = pkgs.python37Packages.ruamel_base;
@@ -28,11 +28,11 @@ let
           isPy3k = true;
           ruamel_yaml_clib = ruamel_yaml_clib;
      };
-     treelib = pkgs.callPackage ./treelib.nix {
+     treelib = pkgs.callPackage ./dvc/treelib.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
      };
-     jsonpath_ng = pkgs.callPackage ./jsonpath_ng.nix {
+     jsonpath_ng = pkgs.callPackage ./dvc/jsonpath_ng.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           decorator = pkgs.python37Packages.decorator;
@@ -40,11 +40,11 @@ let
           ply = pkgs.python37Packages.ply;
           treelib = treelib;
      };
-     pathspec = pkgs.callPackage ./pathspec.nix {
+     pathspec = pkgs.callPackage ./dvc/pathspec.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
      };
-     dvc = pkgs.callPackage ./dvc.nix {
+     dvc = pkgs.callPackage ./dvc/dvc.nix {
           buildPythonPackage = pkgs.python37Packages.buildPythonPackage;
           fetchPypi = pkgs.python37Packages.fetchPypi;
           GitPython = pkgs.python37Packages.GitPython.override{ gitdb2 = gitdb2; };

@@ -36,4 +36,42 @@ rec {
           promise = promise;
           tensorflow-metadata = tensorflow-metadata;
     };
+    gitdb2 = pkgs.callPackage ./dvc/gitdb2.nix {
+          inherit (pkgs.python37Packages) buildPythonPackage fetchPypi smmap2;
+     };
+     tqdm = pkgs.callPackage ./dvc/tqdm.nix {
+          inherit (pkgs.python37Packages) buildPythonPackage fetchPypi nose coverage flake8;
+          glibcLocales = pkgs.glibcLocales;
+     };
+     ruamel_yaml_clib = pkgs.callPackage ./dvc/ruamel_yaml_clib.nix {
+           inherit (pkgs.python37Packages) buildPythonPackage fetchPypi ruamel_base ruamel_ordereddict;
+           isPy3k = true;
+     };
+     ruamel_yaml = pkgs.callPackage ./dvc/ruamel_yaml.nix {
+          inherit (pkgs.python37Packages) buildPythonPackage fetchPypi ruamel_base ruamel_ordereddict;
+          isPy3k = true;
+          ruamel_yaml_clib = ruamel_yaml_clib;
+     };
+     treelib = pkgs.callPackage ./dvc/treelib.nix {
+          inherit (pkgs.python37Packages) buildPythonPackage fetchPypi;
+     };
+     jsonpath_ng = pkgs.callPackage ./dvc/jsonpath_ng.nix {
+          inherit (pkgs.python37Packages) buildPythonPackage fetchPypi decorator six ply;
+          treelib = treelib;
+     };
+     pathspec = pkgs.callPackage ./dvc/pathspec.nix {
+          inherit (pkgs.python37Packages) buildPythonPackage fetchPypi;
+     };
+     dvc = pkgs.callPackage ./dvc/dvc.nix {
+          inherit (pkgs.python37Packages) buildPythonPackage fetchPypi humanize configobj networkx
+                                                                   distro flufl_lock shortuuid funcy packaging future ply pyasn1
+                                                                   colorama asciimatics requests inflect grandalf schema nanotime
+                                                                   configparser appdirs;
+          GitPython = pkgs.python37Packages.GitPython.override{ gitdb2 = gitdb2; };
+          tqdm = tqdm;
+          gitdb2 = gitdb2;
+          ruamel_yaml = ruamel_yaml;
+          jsonpath_ng = jsonpath_ng;
+          pathspec = pathspec;
+    };
 }

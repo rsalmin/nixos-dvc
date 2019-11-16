@@ -1,4 +1,4 @@
-# nixos-dvc
+# nixos-for-ds
 nix-shell scripts to start:
 * DVC (data version control) 1.65.0
 * tensorflow-datasets

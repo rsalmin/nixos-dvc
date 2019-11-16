@@ -1,7 +1,7 @@
 { lib
 , buildPythonPackage
 , fetchPypi
-, googleapis-common-protos
+, googleapis_common_protos
 }:
 
 buildPythonPackage rec {
@@ -15,7 +15,7 @@ buildPythonPackage rec {
     format = "wheel";
   };
 
-  buildInputs = [ googleapis-common-protos];
+  buildInputs = [ googleapis_common_protos];
 
   doCheck = false;
 

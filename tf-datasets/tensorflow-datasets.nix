@@ -13,7 +13,7 @@
 , attrs
 , numpy
 , wrapt
-, googleapis-common-protos
+, googleapis_common_protos
 }:
 
 buildPythonPackage rec {
@@ -25,7 +25,7 @@ buildPythonPackage rec {
     sha256 = "3da829313f7abc9e6d809661a59d1ab015cfa623b362d96166ac211838f1c077";
   };
 
-  buildInputs = [ protobuf requests dill promise absl-py future tensorflow-metadata termcolor tqdm attrs numpy wrapt googleapis-common-protos];
+  buildInputs = [ protobuf requests dill promise absl-py future tensorflow-metadata termcolor tqdm attrs numpy wrapt googleapis_common_protos];
 
   doCheck = false;
 

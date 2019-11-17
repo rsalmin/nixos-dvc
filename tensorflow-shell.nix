@@ -5,6 +5,6 @@ in
 pkgs.stdenv.mkDerivation {
 
      name = "tensorflow-shell";
-     buildInputs = [ mypkgs.tensorflow ];
+     buildInputs = [ mypkgs.tensorflowWithCuda ];
 
 }

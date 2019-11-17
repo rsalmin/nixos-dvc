@@ -2,7 +2,7 @@
 nix-shell scripts to start:
 * DVC (data version control) 1.65.0
 * tensorflow-datasets
-* tensorflow 2.0.0 (CPU without tensorboard)
+* tensorflow 2.0.0 (CPU/GPU without tensorboard)
 
 for NixOS 19.09
 
@@ -35,5 +35,3 @@ dvc config --global core.analytics false
 ```
 to disable analytics collection. (You will still experience Syntax error at the end of the command if you run DVC out of DVC repository)
 
-
- tensorflow only builds with CPU support

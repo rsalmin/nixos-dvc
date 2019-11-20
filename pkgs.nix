@@ -79,6 +79,11 @@ rec {
      pathspec = pkgs.callPackage ./dvc/pathspec.nix {
           inherit (pkgs.python37Packages) buildPythonPackage fetchPypi;
      };
+     pyyaml = pkgs.callPackage ./dvc/pyyaml.nix {
+               inherit (pkgs.python37Packages) buildPythonPackage fetchPypi cython;
+               libyaml =  pkgs.libyaml;
+               buildPackages = pkgs.buildPackages;
+     };
      dvc = pkgs.callPackage ./dvc/dvc.nix {
           inherit (pkgs.python37Packages) buildPythonPackage fetchPypi humanize configobj networkx
                                                                    distro flufl_lock shortuuid funcy packaging future ply pyasn1
@@ -90,5 +95,6 @@ rec {
           ruamel_yaml = ruamel_yaml;
           jsonpath_ng = jsonpath_ng;
           pathspec = pathspec;
+          pyyaml = pyyaml;
     };
 }

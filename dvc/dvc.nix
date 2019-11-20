@@ -1,15 +1,15 @@
-{ lib, buildPythonPackage, fetchPypi, GitPython, humanize, configobj, tqdm, networkx, distro, flufl_lock, shortuuid, funcy, packaging, future, gitdb2, ply, pyasn1, colorama, ruamel_yaml, asciimatics, jsonpath_ng, requests, inflect, grandalf, schema, nanotime, configparser, pathspec, appdirs}:
+{ lib, buildPythonPackage, fetchPypi, GitPython, humanize, configobj, tqdm, networkx, distro, flufl_lock, shortuuid, funcy, packaging, future, gitdb2, ply, pyasn1, colorama, ruamel_yaml, asciimatics, jsonpath_ng, requests, inflect, grandalf, schema, nanotime, configparser, pathspec, appdirs, pyyaml}:
 
 buildPythonPackage rec {
   pname = "dvc";
-  version = "0.68.1";
+  version = "0.70.0";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0edc355947214880c0ccf79e4efcd7a84fedb98a2705b9d4d2ca9ddec182bb2d";
+    sha256 = "0694a320e4eb37409dab10c47e650c682a72f381ae89dafccd0e3a1903a92d90";
   };
 
-  propagatedBuildInputs = [ GitPython humanize configobj tqdm networkx distro flufl_lock shortuuid funcy packaging future gitdb2 ply pyasn1 colorama ruamel_yaml asciimatics jsonpath_ng requests inflect grandalf schema nanotime configparser pathspec appdirs];
+  propagatedBuildInputs = [ GitPython humanize configobj tqdm networkx distro flufl_lock shortuuid funcy packaging future gitdb2 ply pyasn1 colorama ruamel_yaml asciimatics jsonpath_ng requests inflect grandalf schema nanotime configparser pathspec appdirs pyyaml];
 
   meta = with lib; {
     homepage = https://dvc.org/;

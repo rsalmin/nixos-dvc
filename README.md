@@ -1,6 +1,6 @@
 # nixos-for-ds
 nix-shell scripts to start:
-* DVC (data version control) 1.68.1
+* DVC (data version control) 0.70.0
 * tensorflow-datasets
 * tensorflow 2.0.0 (CPU/GPU without tensorboard)
 

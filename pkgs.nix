@@ -48,10 +48,11 @@ rec {
     };
     tensorflow-datasets = pkgs.callPackage ./tf-datasets/tensorflow-datasets.nix {
           inherit (pkgs.python37Packages) buildPythonPackage fetchPypi protobuf requests dill
-                                                                   absl-py future termcolor tqdm attrs numpy wrapt
+                                                                   absl-py future termcolor attrs numpy wrapt
                                                                    googleapis_common_protos;
           promise = promise;
           tensorflow-metadata = tensorflow-metadata;
+          tqdm = tqdm;
     };
     gitdb2 = pkgs.callPackage ./dvc/gitdb2.nix {
           inherit (pkgs.python37Packages) buildPythonPackage fetchPypi smmap2;
